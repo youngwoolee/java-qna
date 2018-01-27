@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import codesquad.UnAuthenticationException;
+import codesquad.security.HttpSessionUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,7 +41,7 @@ public class UserController {
             return "/user/login_failed";
         }
 
-        httpSession.setAttribute("USER_SESSION_KEY", loginUser);
+        httpSession.setAttribute(HttpSessionUtils.USER_SESSION_KEY, loginUser);
         return "redirect:/users";
     }
 

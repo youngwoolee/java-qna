@@ -53,7 +53,6 @@ public class QnaService {
         // TODO 삭제 기능 구현
         Question question = questionRepository.findOne(questionId);
         question.delete(loginUser);
-        questionRepository.save(question);
     }
 
     public Iterable<Question> findAll() {
